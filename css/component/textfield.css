@@ -1,0 +1,86 @@
+.txt-box {
+    background-color: #ffffff;
+    border-radius: 2.5px;
+    border: 1px solid #afafaf;
+    padding: 11px 12px;
+}
+
+.txt-box::placeholder {
+    font-style: italic;
+}
+
+.txt-box--filter {
+    height: 35px;
+    width: 197px;
+    position: relative;
+}
+
+.txt-box--filter .icon-search {
+    position: absolute;
+    top: 25%;
+    left: 10px;
+}
+
+.txt-box--filter input {
+    width: 100%;
+    height: 100%;
+    padding: 11px 38px 10px 38px;
+}
+
+.txt-box--disable {
+    background-color: #edeaff;
+}
+
+.txt-box-al--r {
+    text-align: right;
+}
+
+.txt-box--number {
+    height: 35px;
+    width: 197px;
+    text-align: right;
+    position: relative;
+}
+
+.txt-box--number input {
+    width: 100%;
+    height: 100%;
+}
+
+.txt-box--number .icon-ip-number {
+    position: absolute;
+    top: 30%;
+    right: 15px;
+    z-index: 0;
+}
+
+.txt-box--number input::-webkit-inner-spin-button {
+    opacity: 0;
+    z-index: 1;
+    margin-left: 15px;
+    cursor: pointer;
+    transform: scale(1.5);
+}
+input[type="checkbox"]{
+    color: #090f39;
+    height: 14px;
+    width: 14px;
+    cursor: pointer;
+    appearance: none;
+   
+}
+input[type="checkbox"]:after{
+    background: url('/assets/icon/qlts-icon.png') no-repeat -113px -377px;
+    width: 14px;
+    height: 14px;
+    content: "";
+    display: inline-block;
+
+}
+input[type="checkbox"]:checked::after {
+    background: url("/assets/icon/qlts-icon.png") no-repeat -157px -377px;
+    width: 14px;
+    height: 14px;
+    content: "";
+    display: inline-block;
+}

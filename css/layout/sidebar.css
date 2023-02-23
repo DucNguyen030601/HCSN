@@ -1,0 +1,50 @@
+.sidebar__logo{
+    height: 65px;
+    padding: 11px 4px 19px 4px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+.sidebar__logo .logo__img{
+    background: url('/assets/icon/qlts-icon.png') no-repeat -20px -680px;
+	width: 36px;
+	height: 36px;
+}
+.sidebar__logo h2{
+    color: white;
+}
+
+.sidebar__menu .menu-item{
+    height: 40px;
+    display:flex;
+    align-items: center;
+    column-gap: 20px;
+    padding: 8px 10px;
+    justify-content: center;
+}
+
+.sidebar__menu .menu-item .menu-item__list{
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sidebar__menu .menu-item h5{
+    color: white;
+}
+.sidebar__menu .menu-item:hover{
+    background-color: #1aa4c8;
+    border-radius: 6px;
+}
+.sidebar__footer{
+    border-top: solid 1px white;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 40px;
+    display:flex;
+    align-items: center;
+    justify-content: end;
+    padding: 8px 10px;
+}

@@ -1,0 +1,56 @@
+/* component */
+@import url(../component/button.css);
+@import url(../component/icon.css);
+@import url(../component/table.css);
+@import url(../component/dialog.css);
+@import url(../component/toast.css);
+@import url(../component/dropdown.css);
+@import url(../component/textfield.css);
+
+/* layout */
+@import url(./header.css);
+@import url(./sidebar.css);
+@import url(./content.css);
+
+@font-face {
+    font-family: "Roboto";
+    src: url('/assets/font/Roboto-Regular.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family:"Roboto";
+}
+label{
+    font-size: 14px;
+}
+.sidebar {
+    padding: 11px;
+    width: 200px;
+    /* width: 66px; */
+    height: 100vh;
+    float: left;
+    background-color: #1c3048;
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, .16);
+    position: relative;
+}
+.header {
+    width: calc(100% - 200px);
+    height: 44px;
+    background-color: #ffffff;
+    float: left;
+    padding:0 20px;
+}
+.content {
+    float: left;
+    width: calc(100% - 200px);
+    height: calc(100vh - 44px);
+    background-color:#f4f7ff;
+    padding: 14px 20px 17px 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 14px;
+}

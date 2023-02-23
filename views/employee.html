@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee</title>
+    <link rel="stylesheet" href="../css/layout/main.css">
+    <link rel="stylesheet" href="../css/page/employee.css">
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="sidebar__logo">
+            <div class="logo__img"></div>
+            <!-- <div class="logo__text">MISA QLTS</div> -->
+            <h2 class="menu-item__list">MISA QLTS</h2>
+        </div>
+        <div class="sidebar__menu">
+            <div class="menu-item">
+                <div class="icon-watch"></div>
+                <!-- <div class="item-text">Tiêu đề</div> -->
+                <div class="menu-item__list">
+                    <h5>Tổng quan</h5>
+                    <div class="icon-menu-down"></div>
+                </div>
+
+            </div>
+            <div class="menu-item">
+                <div class="icon-bus"></div>
+                <!-- <div class="item-text">Tiêu đề</div> -->
+                <div class="menu-item__list">
+                    <h5>Tài sản</h5>
+                    <div class="icon-menu-down"></div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="icon-way"></div>
+                <!-- <div class="item-text">Tiêu đề</div> -->
+                <div class="menu-item__list">
+                    <h5>Tài sản HT-ĐB</h5>
+                    <div class="icon-menu-down"></div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="icon-brush"></div>
+                <!-- <div class="item-text">Tiêu đề</div> -->
+                <div class="menu-item__list">
+                    <h5>Công cụ dụng cụ</h5>
+                    <div class="icon-menu-down"></div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="icon-process"></div>
+                <!-- <div class="item-text">Tiêu đề</div> -->
+                <div class="menu-item__list">
+                    <h5>Danh mục</h5>
+                </div>
+            </div>
+            <div class="menu-item">
+
+                <div class="icon-search-menu"></div>
+                <!-- <div class="item-text">Tiêu đề</div> -->
+                <div class="menu-item__list">
+                    <h5>Tra cứu</h5>
+                    <div class="icon-menu-down"></div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="icon-chart"></div>
+                <!-- <div class="item-text">Tiêu đề</div> -->
+                <div class="menu-item__list">
+                    <h5>Báo cáo</h5>
+                    <div class="icon-menu-down"></div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar__footer">
+            <div class="icon-close-sidebar" onclick="CloseSideBar()"></div>
+        </div>
+    </div>
+    <div class="header">
+        <h3>Danh sách tài sản</h3>
+
+        <div class="header__filter-feature">
+            <div class="header__filter">
+                <p>Sở tài chính</p>
+                <input class=" btn filter__input" type="number" value="2001">
+            </div>
+            <ul class="header__feature">
+                <li class="icon-notification"></li>
+                <li class="icon-app"></li>
+                <li class="icon-question"></li>
+                <ul class="feature__user">
+                    <li class="icon-user"></li>
+                    <li class="icon-down"></li>
+                </ul>
+        </div>
+    </div>
+    <div class="content">
+        <div class="content__toolbar">
+            <div class="toolbar__filter">
+                <div class="txt-box--filter">
+                    <div class="icon-search"></div> 
+                    <input class="txt-box" placeholder="Tìm kiếm tài sản">
+                </div>
+                <div class="dropdown dropdown--filter">
+                    <div class="dropdown__select">
+                        <input class="selected txt-box"  placeholder="Chọn mã sử dụng">
+                        <div class="icon-dr-down"></div>
+                        <div class="icon-filter"></div> 
+                    </div>
+                    <ul class="dropdown__menu">
+                        <li>Fremer</li>
+                        <li>Sketch</li>
+                        <li>Invision Studio</li>
+                        <li>Figma</li>
+                        <li>Adobe XD</li>
+                    </ul>
+                </div>
+                <div class="dropdown dropdown--filter ">
+                    <div class="dropdown__select">
+                        <input class="selected txt-box"  placeholder="Chọn mã sử dụng">
+                        <div class="icon-filter"></div> 
+                        <div class="icon-dr-down"></div>
+                    </div>
+                    <ul class="dropdown__menu">
+                        <li>Fremer</li>
+                        <li>Sketch</li>
+                        <li>Invision Studio</li>
+                        <li>Figma</li>
+                        <li>Adobe XD</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="toolbar__feature">
+                <button class="btn btn--primary" onclick="OpenPopup()" >+ Thêm tài sản</button>
+                <button class="btn feature__btn">
+                    <div class="icon-excel"></div>
+                </button>
+                <button class="btn feature__btn">
+                    <div class="icon-bin"></div>
+                </button>
+            </div>
+        </div>
+        <div class="table-section">
+            <table>
+                <thead>
+                    <tr>
+                        <th name="checkbox"><input type="checkbox"></th>
+                        <th name="Sort">STT</th>
+                        <th name="EmployeeCode">Mã tài sản</th>
+                        <th name="FullName">Tên tài sản</th>
+                        <th>Loại tài sản</th>
+                        <th>Bộ phận sử dụng</th>
+                        <th class="table__cell-left">Số lượng</th>
+                        <th class="table__cell-left">Nguyên giá</th>
+                        <th class="table__cell-left">HM/KH luỹ kế</th>
+                        <th class="table__cell-left">Giá trị còn lại</th>
+                        <th>Chức năng</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>1</td>
+                        <td>55H7WN72/2022</td>
+                        <td>Dell Inspiron 3467</td>
+                        <td>Máy vi tính xách tay</td>
+                        <td>Phòng Hành chính Kế toán</td>
+                        <td class="table__cell-left">1</td>
+                        <td class="table__cell-left">20.000.000</td>
+                        <td class="table__cell-left">894.000</td>
+                        <td class="table__cell-left">19.106.000</td>
+                        <td>
+                            <button onclick="OpenPopup(this)">
+                                <div class="icon-edit"></div>
+                            </button>
+                            <button>
+                                <div class="icon-copy"></div>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>1</td>
+                        <td>55H7WN72/2022</td>
+                        <td>Dell Inspiron 3467</td>
+                        <td>Máy vi tính xách tay</td>
+                        <td>Phòng Hành chính Kế toán</td>
+                        <td class="table__cell-left">1</td>
+                        <td class="table__cell-left">20.000.000</td>
+                        <td class="table__cell-left">894.000</td>
+                        <td class="table__cell-left">19.106.000</td>
+                        <td>
+                            <button onclick="OpenPopup(this)">
+                                <div class="icon-edit"></div>
+                            </button>
+                            <button>
+                                <div class="icon-copy"></div>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>1</td>
+                        <td>55H7WN72/2022</td>
+                        <td>Dell Inspiron 3467</td>
+                        <td>Máy vi tính xách tay</td>
+                        <td>Phòng Hành chính Kế toán</td>
+                        <td class="table__cell-left">1</td>
+                        <td class="table__cell-left">20.000.000</td>
+                        <td class="table__cell-left">894.000</td>
+                        <td class="table__cell-left">19.106.000</td>
+                        <td>
+                            <button onclick="OpenPopup(this)">
+                                <div class="icon-edit"></div>
+                            </button>
+                            <button>
+                                <div class="icon-copy"></div>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>1</td>
+                        <td>55H7WN72/2022</td>
+                        <td>Dell Inspiron 3467</td>
+                        <td>Máy vi tính xách tay</td>
+                        <td>Phòng Hành chính Kế toán</td>
+                        <td class="table__cell-left">1</td>
+                        <td class="table__cell-left">20.000.000</td>
+                        <td class="table__cell-left">894.000</td>
+                        <td class="table__cell-left">19.106.000</td>
+                        <td>
+                            <button onclick="OpenPopup(this)">
+                                <div class="icon-edit"></div>
+                            </button>
+                            <button>
+                                <div class="icon-copy"></div>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>1</td>
+                        <td>55H7WN72/2022</td>
+                        <td>Dell Inspiron 3467</td>
+                        <td>Máy vi tính xách tay</td>
+                        <td>Phòng Hành chính Kế toán</td>
+                        <td class="table__cell-left">1</td>
+                        <td class="table__cell-left">20.000.000</td>
+                        <td class="table__cell-left">894.000</td>
+                        <td class="table__cell-left">19.106.000</td>
+                        <td>
+                            <button onclick="OpenPopup(this)">
+                                <div class="icon-edit"></div>
+                            </button>
+                            <button>
+                                <div class="icon-copy"></div>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>1</td>
+                        <td>55H7WN72/2022</td>
+                        <td>Dell Inspiron 3467</td>
+                        <td>Máy vi tính xách tay</td>
+                        <td>Phòng Hành chính Kế toán</td>
+                        <td class="table__cell-left">1</td>
+                        <td class="table__cell-left">20.000.000</td>
+                        <td class="table__cell-left">894.000</td>
+                        <td class="table__cell-left">19.106.000</td>
+                        <td>
+                            <button onclick="OpenPopup(this)">
+                                <div class="icon-edit"></div>
+                            </button>
+                            <button>
+                                <div class="icon-copy"></div>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>1</td>
+                        <td>55H7WN72/2022</td>
+                        <td>Dell Inspiron 3467</td>
+                        <td>Máy vi tính xách tay</td>
+                        <td>Phòng Hành chính Kế toán</td>
+                        <td class="table__cell-left">1</td>
+                        <td class="table__cell-left">20.000.000</td>
+                        <td class="table__cell-left">894.000</td>
+                        <td class="table__cell-left">19.106.000</td>
+                        <td>
+                            <button onclick="OpenPopup(this)">
+                                <div class="icon-edit"></div>
+                            </button>
+                            <button>
+                                <div class="icon-copy"></div>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>1</td>
+                        <td>55H7WN72/2022</td>
+                        <td>Dell Inspiron 3467</td>
+                        <td>Máy vi tính xách tay</td>
+                        <td>Phòng Hành chính Kế toán</td>
+                        <td class="table__cell-left">1</td>
+                        <td class="table__cell-left">20.000.000</td>
+                        <td class="table__cell-left">894.000</td>
+                        <td class="table__cell-left">19.106.000</td>
+                        <td>
+                            <button onclick="OpenPopup(this)">
+                                <div class="icon-edit"></div>
+                            </button>
+                            <button>
+                                <div class="icon-copy"></div>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>1</td>
+                        <td>55H7WN72/2022</td>
+                        <td>Dell Inspiron 3467</td>
+                        <td>Máy vi tính xách tay</td>
+                        <td>Phòng Hành chính Kế toán</td>
+                        <td class="table__cell-left">1</td>
+                        <td class="table__cell-left">20.000.000</td>
+                        <td class="table__cell-left">894.000</td>
+                        <td class="table__cell-left">19.106.000</td>
+                        <td>
+                            <button onclick="OpenPopup(this)">
+                                <div class="icon-edit"></div>
+                            </button>
+                            <button>
+                                <div class="icon-copy"></div>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>1</td>
+                        <td>55H7WN72/2022</td>
+                        <td>Dell Inspiron 3467</td>
+                        <td>Máy vi tính xách tay</td>
+                        <td>Phòng Hành chính Kế toán</td>
+                        <td class="table__cell-left">1</td>
+                        <td class="table__cell-left">20.000.000</td>
+                        <td class="table__cell-left">894.000</td>
+                        <td class="table__cell-left">19.106.000</td>
+                        <td>
+                            <button onclick="OpenPopup(this)">
+                                <div class="icon-edit"></div>
+                            </button>
+                            <button>
+                                <div class="icon-copy"></div>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>1</td>
+                        <td>55H7WN72/2022</td>
+                        <td>Dell Inspiron 3467</td>
+                        <td>Máy vi tính xách tay</td>
+                        <td>Phòng Hành chính Kế toán</td>
+                        <td class="table__cell-left">1</td>
+                        <td class="table__cell-left">20.000.000</td>
+                        <td class="table__cell-left">894.000</td>
+                        <td class="table__cell-left">19.106.000</td>
+                        <td>
+                            <button onclick="OpenPopup(this)">
+                                <div class="icon-edit"></div>
+                            </button>
+                            <button>
+                                <div class="icon-copy"></div>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>1</td>
+                        <td>55H7WN72/2022</td>
+                        <td>Dell Inspiron 3467</td>
+                        <td>Máy vi tính xách tay</td>
+                        <td>Phòng Hành chính Kế toán</td>
+                        <td class="table__cell-left">1</td>
+                        <td class="table__cell-left">20.000.000</td>
+                        <td class="table__cell-left">894.000</td>
+                        <td class="table__cell-left">19.106.000</td>
+                        <td>
+                            <button onclick="OpenPopup(this)">
+                                <div class="icon-edit"></div>
+                            </button>
+                            <button>
+                                <div class="icon-copy"></div>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>1</td>
+                        <td>55H7WN72/2022</td>
+                        <td>Dell Inspiron 3467</td>
+                        <td>Máy vi tính xách tay</td>
+                        <td>Phòng Hành chính Kế toán</td>
+                        <td class="table__cell-left">1</td>
+                        <td class="table__cell-left">20.000.000</td>
+                        <td class="table__cell-left">894.000</td>
+                        <td class="table__cell-left">19.106.000</td>
+                        <td>
+                            <button onclick="OpenPopup(this)">
+                                <div class="icon-edit"></div>
+                            </button>
+                            <button>
+                                <div class="icon-copy"></div>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>1</td>
+                        <td>55H7WN72/2022</td>
+                        <td>Dell Inspiron 3467</td>
+                        <td>Máy vi tính xách tay</td>
+                        <td>Phòng Hành chính Kế toán</td>
+                        <td class="table__cell-left">1</td>
+                        <td class="table__cell-left">20.000.000</td>
+                        <td class="table__cell-left">894.000</td>
+                        <td class="table__cell-left">19.106.000</td>
+                        <td>
+                            <button onclick="OpenPopup(this)">
+                                <div class="icon-edit"></div>
+                            </button>
+                            <button>
+                                <div class="icon-copy"></div>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>1</td>
+                        <td>55H7WN72/2022</td>
+                        <td>Dell Inspiron 3467</td>
+                        <td>Máy vi tính xách tay</td>
+                        <td>Phòng Hành chính Kế toán</td>
+                        <td class="table__cell-left">1</td>
+                        <td class="table__cell-left">20.000.000</td>
+                        <td class="table__cell-left">894.000</td>
+                        <td class="table__cell-left">19.106.000</td>
+                        <td>
+                            <button onclick="OpenPopup(this)">
+                                <div class="icon-edit"></div>
+                            </button>
+                            <button>
+                                <div class="icon-copy"></div>
+                            </button>
+                        </td>
+                    </tr>
+
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="6">
+                            <div class="table-footer">
+                                <div class="table-footer__info">
+                                    <span>Tổng số: <span style="font-weight: bold;">200</span> bản ghi </span>
+                                </div>
+                                <div class="dropdown">
+                                    <div class="dropdown__select">
+                                        <input class="txt-box selected" value="20">
+                                        <div class="icon-dr-down"></div>
+                                    </div>
+                                    <ul class="dropdown__menu" style="top:-180px;">
+                                        <li>5</li>
+                                        <li>10</li>
+                                        <li>15</li>
+                                        <li class="active">20</li>
+                                        <li>25</li>
+                                    </ul>
+                                </div>
+                                <ul class="table-footer__pagging">
+                                    <li><a><</a>
+                                    </li>
+                                    <li class="pagging__item--active"><a>1</a></li>
+                                    <li><a>2</a></li>
+                                    <li><a>...</a></li>
+                                    <li><a>3</a></li>
+                                    <li><a>></a></li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class="table__cell-left--bold">13</td>
+                        <td class="table__cell-left--bold">249.000.000</td>
+                        <td class="table__cell-left--bold">19.716.000</td>
+                        <td class="table__cell-left--bold">229.284.000</td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+
+
+        </div>
+    </div>
+
+    <!-- popup -->
+    <div class="popup" hidden >
+        <div class="popup-form">
+            <div class="popup-form__header">
+                <h2>Sửa tài sản</h2>
+                <div class="header__close" style="cursor: pointer;" onclick="ClosePopup(this)">X</div>
+            </div>
+            <div class="popup-form__grid">
+                <div class="grid__item">
+                    <label for="">Mã tài sản <span style="color:red">*</span></label>
+                    <input type="text" id="txtMaTaiSan" class="txt-box" placeholder="Nhập mã tài sản">
+                    <div class="txt--error" style="color: red;"></div>
+                </div>
+                <div class="grid__item">
+                    <label for="">Tên tài sản <span style="color:red">*</span></label>
+                    <input type="text" class="txt-box" id="txtTenTaiSan" placeholder="Nhập tên tài sản">
+                    <div class="txt--error" style="color: red;"></div>
+                </div>
+                <div class="grid__item">
+                    <label for="">Mã bộ phận sử dụng <span style="color:red">*</span></label>
+                    <div class="dropdown">
+                        <div class="dropdown__select">
+                            <input class="selected txt-box"  placeholder="Chọn mã bộ phận sử dụng" id="txtMaBPSD">
+                            <div class="icon-dr-down"></div>
+                        </div>
+                        <ul class="dropdown__menu">
+                            <li>Fremer</li>
+                            <li>Sketch</li>
+                            <li>Invision Studio</li>
+                            <li>Figma</li>
+                            <li>Adobe XD</li>
+                        </ul>
+                    </div>
+                    <div class="txt--error" style="color: red;"></div>
+                </div>
+                <div class="grid__item">
+                    <label for="">Tên bộ phận sử dụng </label>
+                    <input type="text" id="txtTenBPSD" class="txt-box txt-box--disable" disabled>
+                </div>
+                <div class="grid__item">
+                    <label for="">Mã loại tài sản <span style="color:red">*</span></label>
+                    <div class="dropdown">
+                        <div class="dropdown__select">
+                            <input class="selected txt-box"  placeholder="Chọn mã loại tài sản" id="txtMaLoaiTS">
+                            <div class="icon-dr-down"></div>
+                        </div>
+                        <ul class="dropdown__menu">
+                            <li>Fremer</li>
+                            <li>Sketch</li>
+                            <li>Invision Studio</li>
+                            <li>Figma</li>
+                            <li>Adobe XD</li>
+                        </ul>
+                    </div>
+                    <div class="txt--error" style="color: red;"></div>
+
+                </div>
+                <div class="grid__item">
+                    <label for="">Tên loại tài sản </label>
+                    <input type="text" id="txtTenLoaiTS" class="txt-box txt-box--disable" disabled>
+                    <div class="txt--error" style="color: red;"></div>
+                </div>
+                <div class="grid__item">
+                    <label for="">Số lượng <span style="color:red">*</span></label>
+
+                    <!-- <input type="number" id="txtSoLuong" class="txt-box txt-box-al--r"> -->
+                    <div class="txt-box--number">
+                        <input class="txt-box txt-box-al--r" id="txtSoLuong" type="number">
+                        <div class="icon-ip-number"></div>
+                    </div>
+                    <div class="txt--error" style="color: red;"></div>
+                </div>
+                <div class="grid__item">
+                    <label for="">Nguyên giá <span style="color:red">*</span></label>
+                    <input type="text" id="txtNguyenGia" class="txt-box txt-box-al--r">
+                    <div class="txt--error" style="color: red;"></div>
+                </div>
+                <div class="grid__item">
+                    <label for="">Số năm sử dụng <span style="color:red">*</span></label>
+                    <input type="text" class="txt-box txt-box-al--r">
+                    <div class="txt--error" style="color: red;"></div>
+                </div>
+                <div class="grid__item">
+                    <label for="">Tỷ lệ hao mòn (%) <span style="color:red">*</span></label>
+                    <!-- <input type="number" id="txtTiLeHM" class="txt-box txt-box-al--r"> -->
+                    <div class="txt-box--number">
+                        <input class="txt-box txt-box-al--r" id="txtTiLeHM" type="number">
+                        <div class="icon-ip-number"></div>
+                    </div>
+                    <div class="txt--error" style="color: red;"></div>
+                </div>
+                <div class="grid__item">
+                    <label for="">Giá trị hao mòn năm <span style="color:red">*</span></label>
+                    <input type="text" id="txtGiaTriHM" class="txt-box txt-box-al--r">
+                    <div class="txt--error" style="color: red;"></div>
+                </div>
+                <div class="grid__item">
+                    <label for="">Năm theo dõi</label>
+                    <input type="text" class="txt-box txt-box-al--r txt-box--disable" value="2021" disabled>
+                    <div class="txt--error" style="color: red;"></div>
+                </div>
+                <div class="grid__item">
+                    <label for="">Ngày mua <span style="color:red">*</span></label>
+                    <input type="date" id="txtNgayMua" class="txt-box" placeholder="Nhập nội dung">
+                    <div class="txt--error" style="color: red;"></div>
+                </div>
+                <div class="grid__item">
+                    <label for="">Ngày bắt đầu sử dụng <span style="color:red">*</span></label>
+                    <input type="date" class="txt-box" id="txtNgayBDSD" placeholder="Nhập nội dung">
+                    <div class="txt--error" style="color: red;"></div>
+                </div>
+            </div>
+            <div class="popup-form__footer">
+                <button class="btn btn--primary" id="btnSave" style="width: 100px;">Lưu</button>
+                <button class="btn" style="width: 100px;" id="btnCancel">Huỷ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- dialog -->
+    <div class="dialog" hidden>
+        <div class="dialog__body">
+            <div class="icon-dialog-warning"></div>
+            <div class="body__content">Bạn có muốn huỷ khai báo tài sản nàybáo tài sản này?</div>
+        </div>
+        <div class="dialog__footer">
+            <button class="btn btn--primary">Huỷ bỏ</button>
+            <button class="btn " id="btnCancel">Không</button>
+        </div>
+    </div>
+
+    <!-- toast message -->
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

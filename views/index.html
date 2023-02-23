@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/layout/main.css">
+    <link rel="stylesheet" href="../css/page/employee.css">
+    <style>
+        
+        .txt-box {
+            background-color: #ffffff;
+            border-radius: 2.5px;
+            border: 1px solid #afafaf;
+            padding: 0px 12px;
+        }
+
+        .txt-box::placeholder{
+            font-style: italic;
+        }
+        .txt-box--filter{
+            height: 35px;
+            width: 197px;
+            position: relative;
+        }
+        .txt-box--filter .icon-search{
+            position: absolute;
+            top: 25%;
+            left: 10px;
+        }
+        .txt-box--filter input{ 
+            width: 100%;
+            height: 100%;
+            padding: 11px 38px 10px 38px;
+        }
+        .txt-box--disable{
+            background-color: #afafaf;
+        }
+        .txt-box-al--left{
+            text-align: right;
+        }
+        .txt-box--number{
+            text-align: right;
+            position: relative;
+        }
+        .txt-box--number input{
+            width: 100%;
+            height: 100%;
+        }
+        .txt-box--number .icon-ip-number{
+            position: absolute;
+            top: 25%;
+            right: 17px;
+         
+        }
+        .txt-box--number input::-webkit-inner-spin-button
+        {
+            opacity: 0;
+            z-index: 1;
+            margin-left: 20px;
+            cursor: pointer;
+            transform: scale(1.5);
+        }
+        input[type="checkbox"]{
+            color: #090f39;
+            height: 14px;
+            width: 14px;
+            cursor: pointer;
+            appearance: none;
+           
+        }
+        input[type="checkbox"]:after{
+            background: url('/assets/icon/qlts-icon.png') no-repeat -113px -377px;
+	        width: 14px;
+	        height: 14px;
+            content: "";
+            display: inline-block;
+
+        }
+        input[type="checkbox"]:checked::after {
+            background: url("/assets/icon/qlts-icon.png") no-repeat -157px -377px;
+            width: 14px;
+            height: 14px;
+            content: "";
+            display: inline-block;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <div class="dialog">
+        <div class="dialog__body">
+            <div class="icon-dialog-warning"></div>
+            <div class="body__content">Bạn có muốn huỷ khai báo tài sản nàybáo tài sản này?</div>
+        </div>
+        <div class="dialog__footer">
+            <button class="btn btn--primary">Huỷ bỏ</button>
+            <button class="btn ">Không</button>
+        </div>
+    </div>
+
+    <div class="toast">
+        <div class="icon-toast-sucess"></div>
+        <div class="toast__content">Lưu dữ liệu thành công!</div>
+    </div>
+    <button class="a">Them vao da</button>
+
+    <div class="dropdown">
+        <div class="dropdown__select">
+            <input class="selected txt-box"  placeholder="chọn mã sử dụng">
+            <div class="icon-dr-down"></div>
+        </div>
+        <ul class="dropdown__menu">
+            <li>Fremer</li>
+            <li>Sketch</li>
+            <li>Invision Studio</li>
+            <li>Figma</li>
+            <li>Adobe XD</li>
+        </ul>
+    </div>
+
+    <input class="txt-box txt-box-al--left" value="10">
+
+    <div class="txt-box--number">
+        <input class="txt-box txt-box-al--left" value="12" type="number">
+        <div class="icon-ip-number"></div>
+    </div>
+    
+    <input type="checkbox">
+
+    <!-- <div class="txt-box--filter">
+        <div class="icon-search"></div> 
+        <input class="txt-box">
+    </div> -->
+    <script>
+        const dropdowns = document.querySelectorAll('.dropdown');
+        dropdowns.forEach(dropdown => {
+            const select = dropdown.querySelector('.dropdown__select');
+            const menu = dropdown.querySelector('.dropdown__menu');
+            const caret = dropdown.querySelector('.dropdown__select .icon-dr-down')
+            const options = dropdown.querySelectorAll('.dropdown__menu li');
+            const selected = dropdown.querySelector('.selected');
+
+            caret.addEventListener('click', () => {
+                let display = getComputedStyle(menu).display;
+                menu.style.display = (display == "none" ? "block" : "none");
+                options.forEach(option => {
+                    if (selected.value == option.outerText) option.classList.add('active');
+                    else option.classList.remove('active');
+                });
+                // menu.addEventListener('mouseleave', () => {
+                //     menu.style.display = 'none';
+                // })
+            })
+            options.forEach(option => {
+                option.addEventListener('click', () => {
+                    selected.value = option.outerText;
+                    menu.style.display = 'none';
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>
