@@ -1,50 +1,79 @@
-.sidebar__logo{
+.sidebar__logo {
     height: 65px;
     padding: 11px 4px 19px 4px;
     display: flex;
     align-items: center;
-    justify-content:space-between;
+    column-gap: 20px;
 }
-.sidebar__logo .logo__img{
+
+.sidebar__logo .logo__img {
     background: url('/assets/icon/qlts-icon.png') no-repeat -20px -680px;
-	width: 36px;
-	height: 36px;
+    width: 36px;
+    height: 36px;
 }
-.sidebar__logo h2{
+
+.sidebar__logo h2 {
     color: white;
 }
 
-.sidebar__menu .menu-item{
+.sidebar__menu .menu-item {
     height: 40px;
-    display:flex;
+    display: flex;
     align-items: center;
     column-gap: 20px;
     padding: 8px 10px;
     justify-content: center;
+    opacity: 0.5;
 }
 
-.sidebar__menu .menu-item .menu-item__list{
+.sidebar__menu .menu-item .menu-item__list {
     flex: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.sidebar__menu .menu-item h5{
+
+.sidebar__menu .menu-item h5 {
     color: white;
 }
-.sidebar__menu .menu-item:hover{
+
+.sidebar__menu .menu-item:hover {
     background-color: #1aa4c8;
     border-radius: 6px;
+    opacity: 1;
+    cursor: pointer;
 }
-.sidebar__footer{
-    border-top: solid 1px white;
+
+.sidebar__menu>div>div:nth-child(2) {
+    display: none;
+}
+
+.sidebar__menu .menu-item:hover>div:nth-child(2) {
+    display: block;
+}
+
+.sidebar__menu .menu-item:hover>div:nth-child(1) {
+    display: none;
+}
+
+.sidebar__footer {
+    border-top: solid 2px #32445a;
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
     height: 40px;
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: end;
     padding: 8px 10px;
+}
+
+.sidebar__footer div {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.sidebar__footer div:hover {
+    opacity: 1;
 }

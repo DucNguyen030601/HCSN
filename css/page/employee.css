@@ -30,7 +30,7 @@
     row-gap: 20px;
     padding: 0px 16px 20px 16px;
 }
-.grid__item .dropdown,.grid__item .txt-box--number{
+.grid__item .dropdown,.grid__item .txt-box--number,.grid__item .txt-box--date{
     margin-top: 8px;
 }
 .grid__item > input{
@@ -67,6 +67,10 @@
     height: 52px;
     width: 100%;
     background-color: rgba(128, 128, 128, 0.151);
+}
+.popup-form__footer button{
+    height: 36px;
+    width: 110px;
 }
 .txt--error{
     font-size: 13px;

@@ -8,6 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/layout/main.css">
     <link rel="stylesheet" href="../css/page/employee.css">
+
     <style>
         
         .txt-box {
@@ -85,52 +86,88 @@
             height: 14px;
             content: "";
             display: inline-block;
-}
+        }
+        .tooltip{
+            position: relative;
+            cursor: pointer;
+            display: inline-block;
+        }
+        .tooltip .tooltip__text{
+            visibility: hidden;
+            position: absolute;
+            top: 110%;
+            left: 50%;
+            white-space: nowrap;
+            background-color: #ffffff;
+            border: 1px solid #afafaf;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, .16);
+            padding: 5px;
+            font-size: 13px;
+        }
+        .tooltip:hover .tooltip__text{
+            visibility: visible;
+        }
+        .txt-box--date{
+            width: 200px;
+            height: 36px;
+            position: relative;
+        }
+        .txt-box--date input{
+            width: 100%;
+            height: 100%;
+        }
+
 
 
     </style>
 </head>
 
 <body>
-    <div class="dialog">
-        <div class="dialog__body">
+    <div class="tooltip">
+        <button class="btn btn--outline" style="width: 36px;height: 36px;">Lưu</button>  
+
+        <span class="tooltip__text">Số thứ tự</span>
+    </div>
+    <h5>ABC123</h5>
+
+    <div class="txt-box--date">
+        <input type="date" class="txt-box">
+        <div class="icon-date"></div>
+    </div>
+    
+
+    <!-- <div class="dialog" hidden>
+        <div class="dialog-form">
+        <div class="dialog-form__body">
             <div class="icon-dialog-warning"></div>
             <div class="body__content">Bạn có muốn huỷ khai báo tài sản nàybáo tài sản này?</div>
         </div>
-        <div class="dialog__footer">
+        <div class="dialog-form__footer">
+            <button class="btn btn--sub">Không lưu</button>
             <button class="btn btn--primary">Huỷ bỏ</button>
-            <button class="btn ">Không</button>
+            <button class="btn btn--outline">Lưu</button>
+        </div>     
         </div>
     </div>
 
-    <div class="toast">
+    <div class="toast" hidden>
         <div class="icon-toast-sucess"></div>
         <div class="toast__content">Lưu dữ liệu thành công!</div>
     </div>
     <button class="a">Them vao da</button>
 
-    <div class="dropdown">
-        <div class="dropdown__select">
-            <input class="selected txt-box"  placeholder="chọn mã sử dụng">
-            <div class="icon-dr-down"></div>
-        </div>
-        <ul class="dropdown__menu">
-            <li>Fremer</li>
-            <li>Sketch</li>
-            <li>Invision Studio</li>
-            <li>Figma</li>
-            <li>Adobe XD</li>
-        </ul>
-    </div>
+    
 
-    <input class="txt-box txt-box-al--left" value="10">
+    <button class="btn btn--outline">Không</button> -->
+
+    <!-- <input class="txt-box txt-box-al--left" value="10">
 
     <div class="txt-box--number">
         <input class="txt-box txt-box-al--left" value="12" type="number">
         <div class="icon-ip-number"></div>
     </div>
     
-    <input type="checkbox">
+    <input type="checkbox"> -->
 
     <!-- <div class="txt-box--filter">
         <div class="icon-search"></div> 

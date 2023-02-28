@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/layout/main.css">
+    <link rel="stylesheet" href="../css/page/employee.css">
+</head>
+
+<body>
+    <div class="dropdown" style="width: 219px;height: 36px;">
+        <div class="dropdown__select">
+            <input class="selected txt-box" placeholder="chọn mã sử dụng">
+            <div class="icon-dr-down"></div>
+        </div>
+        <ul class="dropdown__menu">
+            <li>Fremer</li>
+            <li>Sketch</li>
+            <li>Invision Studio</li>
+            <li>Figma</li>
+            <li>Adobe XD</li>
+        </ul>
+    </div>
+
+    <div>
+        <label>Nhập</label>
+        <dcombobox api="https://apidemo.laptrinhweb.edu.vn/api/v1/Departments" placeholder="Chọn mã sử dụng"
+            style="width: 219px;height: 36px;">
+        </dcombobox>
+    </div>
+
+
+</body>
+<script>
+    window.onload = async function () {
+        await BuildCombobox();
+    }
+    async function BuildCombobox() {
+        const dcomboboxs = document.querySelectorAll('dcombobox');
+        for (const element of dcomboboxs) {
+            element.innerHTML = `<div class="dropdown">
+                                    <div class="dropdown__select">
+                                        <input class="selected txt-box" placeholder="chọn mã sử dụng">
+                                        <div class="icon-dr-down"></div>
+                                    </div>
+                                    <div class="dropdown__menu">
+                                    </div>
+                                </div>`
+
+            const dropdown = element.querySelector('.dropdown');
+            const api = element.getAttribute('api');
+
+            //Thiết lập chiều cao chiều rộng của combobox
+            dropdown.style.width = element.style.width;
+            dropdown.style.height = element.style.height;
+
+            //Lấy các phần tử con chứa nó
+            //1. lấy thẻ input
+            //2. lấy thẻ icon
+            //3. lấy thẻ menu
+            //4. lấy các thẻ con trong menu
+            const selected = dropdown.querySelector('.selected');
+            const caret = dropdown.querySelector('.dropdown__select .icon-dr-down')
+            const menu = dropdown.querySelector('.dropdown__menu');
+
+            var data = await getData(api);
+            menu.innerHTML = getItemMenu(data);
+
+            selected.oninput = function () {
+                menu.innerHTML = getItemMenu(data, selected.value);
+                let options = dropdown.querySelectorAll('.dropdown__menu a');
+                CheckItemMenuCombobox(options, selected,menu);
+                menu.style.display = 'block';
+            }
+
+            selected.onfocus = () => {
+                let options = dropdown.querySelectorAll('.dropdown__menu a');
+                CheckItemMenuCombobox(options, selected,menu);
+                menu.style.display = 'block';
+            }
+
+            caret.onclick = () => {
+                let display = getComputedStyle(menu).display;
+                menu.style.display = (display == "none" ? "block" : "none");
+                let options = dropdown.querySelectorAll('.dropdown__menu a');
+                CheckItemMenuCombobox(options, selected,menu);
+            }
+
+            selected.addEventListener('keydown', function (e) {
+                const options = dropdown.querySelectorAll('.dropdown__menu a');
+                //Nếu kết quả chỉ 
+                if(options.length==1 && options[active].textContent!=selected.value) active=-1;
+                if(active!=-1 && (e.keyCode==40 || e.keyCode==38) )  options[active].classList.remove('active');
+
+                if (e.keyCode == 40) {
+                    if (active < options.length - 1) {
+                        active++;
+                        options[active].focus();
+                        selected.value = options[active].textContent;
+                    }
+                }
+                else if (e.keyCode == 38) {
+                    if (active > 0) {
+                        active--;
+                        options[active].focus();
+                        selected.value = options[active].textContent;
+                        
+                    }
+                }
+                else if (e.keyCode == 13) {
+                    selected.value = options[active].textContent;
+                    menu.style.display = 'none';
+                }
+            })
+        }
+    }
+    async function getData(api) {
+        const response = await fetch(api);
+        return await response.json();
+    }
+    function CloseCombobox(menu) {
+        menu.addEventListener('mouseleave', () => {
+            menu.style.display = 'none';
+        })
+    }
+    function getItemMenu(data, name = '') {
+        let a = '';
+        data.forEach(element => {
+            if (element.DepartmentName.includes(name)) {
+                a += `<a href="#${element.DepartmentCode}">${element.DepartmentName}</a>`;
+            }
+        });
+        return a;
+    }
+    active = -1;
+    function CheckItemMenuCombobox(options, selected ,menu) {
+        for (i = 0; i < options.length; i++) {
+            if (selected.value == options[i].textContent) {
+                options[i].classList.add('active');
+                active=i;
+            }
+            else options[i].classList.remove('active');
+        }
+        options.forEach(element => {
+            element.onclick = () => {
+                selected.value = element.textContent;
+                menu.style.display = 'none';
+                document.removeEventListener('keydown', function (e) { });
+            }
+        });
+           
+    }
+   
+
+
+</script>
+
+</html>

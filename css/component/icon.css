@@ -1,6 +1,3 @@
-
-
-
 .icon-search-menu {
     background: url('../../assets/icon/qlts-icon.png') no-repeat -241px -153px;
     width: 22px;
@@ -11,7 +8,11 @@
     background: url('../../assets/icon/qlts-icon.png') no-repeat -243px -23px;
     width: 18px;
     height: 18px;
-    
+}
+.icon-search-bold{
+    background: url('../../assets/icon/qlts-icon.png') no-repeat -241px -197px;
+	width: 22px;
+	height: 22px;
 }
 
 .icon-watch {
@@ -19,17 +20,30 @@
     height: 22px;
     background: url('../../assets/icon/qlts-icon.png') no-repeat -21px -153px;
 }
-
+.icon-watch-bold{
+    background: url('../../assets/icon/qlts-icon.png') no-repeat -22px -198px;
+	width: 22px;
+	height: 22px;
+}
 .icon-bus {
     width: 22px;
     height: 23px;
     background: url('../../assets/icon/qlts-icon.png') no-repeat -65px -153px;
 }
-
+.icon-bus-bold {
+    background: url('/assets/icon/qlts-icon.png') no-repeat -65px -197px;
+	width: 22px;
+	height: 23px;
+}
 .icon-way {
     width: 21px;
     height: 23px;
     background: url('../../assets/icon/qlts-icon.png') no-repeat -110px -153px;
+}
+.icon-way-bold{
+    background: url('../../assets/icon/qlts-icon.png') no-repeat -110px -197px;
+	width: 21px;
+	height: 22px;
 }
 
 .icon-brush {
@@ -37,18 +51,32 @@
     height: 22px;
     background: url('../../assets/icon/qlts-icon.png') no-repeat -153px -153px;
 }
+.icon-brush-bold{
+    background: url('../../assets/icon/qlts-icon.png') no-repeat -153px -197px;
+	width: 22px;
+	height: 22px;
+}
 
 .icon-process {
     background: url('../../assets/icon/qlts-icon.png') no-repeat -197px -155px;
     width: 22px;
     height: 18px;
-
+}
+.icon-process-bold{
+    background: url('../../assets/icon/qlts-icon.png') no-repeat -198px -200px;
+	width: 22px;
+    height: 18px;
 }
 
 .icon-chart {
     width: 22px;
     height: 22px;
     background: url('../../assets/icon/qlts-icon.png') no-repeat -329px -153px;
+}
+.icon-chart-bold{
+    background: url('../../assets/icon/qlts-icon.png') no-repeat -330px -198px;;
+	width: 22px;
+	height: 22px;
 }
 
 .icon-notification {
@@ -110,27 +138,32 @@
     width: 16px;
     height: 16px;
 }
-.icon-close-sidebar{
+
+.icon-close-sidebar {
     background: url('../../assets/icon/qlts-icon.png') no-repeat -461px -199px;
-	width: 22px;
-	height: 18px;
+    width: 22px;
+    height: 18px;
 }
-.icon-open-sidebar{
+
+.icon-open-sidebar {
     background: url('../../assets/icon/qlts-icon.png') no-repeat -461px -155px;
-	width: 22px;
-	height: 18px;
+    width: 22px;
+    height: 18px;
 }
-.icon-dr-down{
+
+.icon-dr-down {
     background: url('../../assets/icon/qlts-icon.png') no-repeat -72px -338px;
-	width: 8px;
-	height: 5px;
+    width: 8px;
+    height: 5px;
 }
-.icon-menu-down{
+
+.icon-menu-down {
     background: url('../../assets/icon/qlts-icon.png') no-repeat -158px -293px;
-	width: 11px;
-	height: 7px;
+    width: 11px;
+    height: 7px;
 }
-.icon-dialog-warning{
+
+.icon-dialog-warning {
     background: url('../../assets/icon/caution.png');
     width: 60px;
     height: 60px;
@@ -138,7 +171,8 @@
     background-position: center;
     background-size: contain;
 }
-.icon-toast-sucess{
+
+.icon-toast-sucess {
     background: url('../../assets/icon/check.png');
     width: 30px;
     height: 30px;
@@ -146,18 +180,32 @@
     background-position: center;
     background-size: contain;
 }
-.icon-ip-number{
+
+.icon-ip-number {
     background: url('../../assets/icon/qlts-icon.png') no-repeat -204px -332px;
-	width: 8px;
-	height: 16px;
+    width: 8px;
+    height: 16px;
 }
-.icon-cb{
+
+.icon-cb {
     background: url('../../assets/icon/qlts-icon.png') no-repeat -113px -377px;
-	width: 14px;
-	height: 14px;
+    width: 14px;
+    height: 14px;
 }
-.icon-cb-checked{
+
+.icon-cb-checked {
     background: url('../../assets/icon/qlts-icon.png') no-repeat -157px -377px;
-	width: 14px;
-	height: 14px;
+    width: 14px;
+    height: 14px;
+}
+
+.icon-close-popup {
+    background: url('../../assets/icon/qlts-icon.png') no-repeat -375px -287px;
+    width: 18px;
+    height: 18px;
+}
+.icon-date{
+    background: url('../../assets/icon/qlts-icon.png') no-repeat -287px -67px;
+	width: 18px;
+	height: 18px;
 }

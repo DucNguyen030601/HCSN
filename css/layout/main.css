@@ -6,6 +6,7 @@
 @import url(../component/toast.css);
 @import url(../component/dropdown.css);
 @import url(../component/textfield.css);
+@import url(../component/tooltip.css);
 
 /* layout */
 @import url(./header.css);
@@ -29,7 +30,7 @@ label{
 }
 .sidebar {
     padding: 11px;
-    width: 200px;
+    width: 220px;
     /* width: 66px; */
     height: 100vh;
     float: left;
@@ -38,7 +39,7 @@ label{
     position: relative;
 }
 .header {
-    width: calc(100% - 200px);
+    width: calc(100% - 220px);
     height: 44px;
     background-color: #ffffff;
     float: left;
@@ -46,7 +47,7 @@ label{
 }
 .content {
     float: left;
-    width: calc(100% - 200px);
+    width: calc(100% - 220px);
     height: calc(100vh - 44px);
     background-color:#f4f7ff;
     padding: 14px 20px 17px 20px;

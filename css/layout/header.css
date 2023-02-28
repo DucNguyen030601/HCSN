@@ -24,17 +24,24 @@
     align-items: center;
     column-gap: 10px;
 }
-.header__filter .filter__input{
-    background-color: rgba(26, 164, 200, .2);
+.header__filter .txt-box--number{
+ 
     width: 112px;
     height: 30px;
+    
+}
+.header__filter .txt-box--number input{
+    background-color: rgba(26, 164, 200, .2);
     font-size: 13px;
-    padding: 8px 8px 7px 53px;
     font-weight: bold;
 }
-.header__filter p::after{
+
+.header__filter span::after{
     content: "Năm";
     position: absolute;
-    left: 52%;
-    top: 20%;
+    left: 55%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 13px;
+    z-index: 1;
 }

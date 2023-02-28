@@ -20,15 +20,16 @@
         <div class="sidebar__menu">
             <div class="menu-item">
                 <div class="icon-watch"></div>
+                <div class="icon-watch-bold"></div>
                 <!-- <div class="item-text">Tiêu đề</div> -->
                 <div class="menu-item__list">
                     <h5>Tổng quan</h5>
                     <div class="icon-menu-down"></div>
                 </div>
-
             </div>
             <div class="menu-item">
                 <div class="icon-bus"></div>
+                <div class="icon-bus-bold"></div>
                 <!-- <div class="item-text">Tiêu đề</div> -->
                 <div class="menu-item__list">
                     <h5>Tài sản</h5>
@@ -37,14 +38,21 @@
             </div>
             <div class="menu-item">
                 <div class="icon-way"></div>
+                <div class="icon-way-bold"></div>
+
                 <!-- <div class="item-text">Tiêu đề</div> -->
                 <div class="menu-item__list">
-                    <h5>Tài sản HT-ĐB</h5>
+                    <div class="tooltip">
+                        <h5>Tài sản HT - ĐB</h5>
+                        <span class="tooltip__text">Tài sản</span>
+                    </div>
                     <div class="icon-menu-down"></div>
                 </div>
             </div>
             <div class="menu-item">
                 <div class="icon-brush"></div>
+                <div class="icon-brush-bold"></div>
+
                 <!-- <div class="item-text">Tiêu đề</div> -->
                 <div class="menu-item__list">
                     <h5>Công cụ dụng cụ</h5>
@@ -53,6 +61,8 @@
             </div>
             <div class="menu-item">
                 <div class="icon-process"></div>
+                <div class="icon-process-bold"></div>
+
                 <!-- <div class="item-text">Tiêu đề</div> -->
                 <div class="menu-item__list">
                     <h5>Danh mục</h5>
@@ -61,6 +71,8 @@
             <div class="menu-item">
 
                 <div class="icon-search-menu"></div>
+                <div class="icon-search-bold"></div>
+
                 <!-- <div class="item-text">Tiêu đề</div> -->
                 <div class="menu-item__list">
                     <h5>Tra cứu</h5>
@@ -69,6 +81,8 @@
             </div>
             <div class="menu-item">
                 <div class="icon-chart"></div>
+                <div class="icon-chart-bold"></div>
+
                 <!-- <div class="item-text">Tiêu đề</div> -->
                 <div class="menu-item__list">
                     <h5>Báo cáo</h5>
@@ -85,8 +99,11 @@
 
         <div class="header__filter-feature">
             <div class="header__filter">
-                <p>Sở tài chính</p>
-                <input class=" btn filter__input" type="number" value="2001">
+                <span>Sở tài chính</span>
+                <div class="txt-box--number">
+                    <input class="txt-box txt-box-al--r " value="2021" type="number">
+                    <div class="icon-ip-number"></div>
+                </div>
             </div>
             <ul class="header__feature">
                 <li class="icon-notification"></li>
@@ -135,13 +152,22 @@
                 </div>
             </div>
             <div class="toolbar__feature">
-                <button class="btn btn--primary" onclick="OpenPopup()" >+ Thêm tài sản</button>
-                <button class="btn feature__btn">
+                <button class="btn btn--primary" onclick="OpenPopup(this,1)" style="width: 110px;height: 36px;">+ Thêm tài sản</button>
+                
+                <div class="tooltip">
+                    <button class="btn feature__btn">
                     <div class="icon-excel"></div>
-                </button>
-                <button class="btn feature__btn">
+                    </button>
+                    <span class="tooltip__text">Xuất Excel</span>
+                </div>
+                
+                <div class="tooltip">
+                <button class="btn feature__btn" onclick="RemoveEmployees()">
                     <div class="icon-bin"></div>
                 </button>
+                <span class="tooltip__text">Xoá</span>
+            </div>
+            
             </div>
         </div>
         <div class="table-section">
@@ -149,14 +175,25 @@
                 <thead>
                     <tr>
                         <th name="checkbox"><input type="checkbox"></th>
-                        <th name="Sort">STT</th>
+                        <th name="Sort">
+                            <div class="tooltip">
+                              STT  
+                              <span class="tooltip__text">Số thứ tự</span>
+                            </div>
+                        </th>
                         <th name="EmployeeCode">Mã tài sản</th>
                         <th name="FullName">Tên tài sản</th>
                         <th>Loại tài sản</th>
                         <th>Bộ phận sử dụng</th>
                         <th class="table__cell-left">Số lượng</th>
                         <th class="table__cell-left">Nguyên giá</th>
-                        <th class="table__cell-left">HM/KH luỹ kế</th>
+                        <th class="table__cell-left">
+                            <div class="tooltip">
+                                HM/KH luỹ kế
+                                <span class="tooltip__text">Hao mòn luỹ kế</span>
+                            </div>
+                            
+                        </th>
                         <th class="table__cell-left">Giá trị còn lại</th>
                         <th>Chức năng</th>
                     </tr>
@@ -175,10 +212,10 @@
                         <td class="table__cell-left">894.000</td>
                         <td class="table__cell-left">19.106.000</td>
                         <td>
-                            <button onclick="OpenPopup(this)">
+                            <button onclick="OpenPopup(this,2)">
                                 <div class="icon-edit"></div>
                             </button>
-                            <button>
+                            <button onclick="OpenPopup(this,3)">
                                 <div class="icon-copy"></div>
                             </button>
                         </td>
@@ -195,10 +232,10 @@
                         <td class="table__cell-left">894.000</td>
                         <td class="table__cell-left">19.106.000</td>
                         <td>
-                            <button onclick="OpenPopup(this)">
+                            <button onclick="OpenPopup(this,2)">
                                 <div class="icon-edit"></div>
                             </button>
-                            <button>
+                            <button onclick="OpenPopup(this,3)">
                                 <div class="icon-copy"></div>
                             </button>
                         </td>
@@ -215,10 +252,10 @@
                         <td class="table__cell-left">894.000</td>
                         <td class="table__cell-left">19.106.000</td>
                         <td>
-                            <button onclick="OpenPopup(this)">
+                            <button onclick="OpenPopup(this,2)">
                                 <div class="icon-edit"></div>
                             </button>
-                            <button>
+                            <button onclick="OpenPopup(this,3)">
                                 <div class="icon-copy"></div>
                             </button>
                         </td>
@@ -235,10 +272,10 @@
                         <td class="table__cell-left">894.000</td>
                         <td class="table__cell-left">19.106.000</td>
                         <td>
-                            <button onclick="OpenPopup(this)">
+                            <button onclick="OpenPopup(this,2)">
                                 <div class="icon-edit"></div>
                             </button>
-                            <button>
+                            <button onclick="OpenPopup(this,3)">
                                 <div class="icon-copy"></div>
                             </button>
                         </td>
@@ -255,10 +292,10 @@
                         <td class="table__cell-left">894.000</td>
                         <td class="table__cell-left">19.106.000</td>
                         <td>
-                            <button onclick="OpenPopup(this)">
+                            <button onclick="OpenPopup(this,2)">
                                 <div class="icon-edit"></div>
                             </button>
-                            <button>
+                            <button onclick="OpenPopup(this,3)">
                                 <div class="icon-copy"></div>
                             </button>
                         </td>
@@ -275,10 +312,10 @@
                         <td class="table__cell-left">894.000</td>
                         <td class="table__cell-left">19.106.000</td>
                         <td>
-                            <button onclick="OpenPopup(this)">
+                            <button onclick="OpenPopup(this,2)">
                                 <div class="icon-edit"></div>
                             </button>
-                            <button>
+                            <button onclick="OpenPopup(this,3)">
                                 <div class="icon-copy"></div>
                             </button>
                         </td>
@@ -295,10 +332,10 @@
                         <td class="table__cell-left">894.000</td>
                         <td class="table__cell-left">19.106.000</td>
                         <td>
-                            <button onclick="OpenPopup(this)">
+                            <button onclick="OpenPopup(this,2)">
                                 <div class="icon-edit"></div>
                             </button>
-                            <button>
+                            <button onclick="OpenPopup(this,3)">
                                 <div class="icon-copy"></div>
                             </button>
                         </td>
@@ -315,10 +352,10 @@
                         <td class="table__cell-left">894.000</td>
                         <td class="table__cell-left">19.106.000</td>
                         <td>
-                            <button onclick="OpenPopup(this)">
+                            <button onclick="OpenPopup(this,2)">
                                 <div class="icon-edit"></div>
                             </button>
-                            <button>
+                            <button onclick="OpenPopup(this,3)">
                                 <div class="icon-copy"></div>
                             </button>
                         </td>
@@ -335,10 +372,10 @@
                         <td class="table__cell-left">894.000</td>
                         <td class="table__cell-left">19.106.000</td>
                         <td>
-                            <button onclick="OpenPopup(this)">
+                            <button onclick="OpenPopup(this,2)">
                                 <div class="icon-edit"></div>
                             </button>
-                            <button>
+                            <button onclick="OpenPopup(this,3)">
                                 <div class="icon-copy"></div>
                             </button>
                         </td>
@@ -355,10 +392,10 @@
                         <td class="table__cell-left">894.000</td>
                         <td class="table__cell-left">19.106.000</td>
                         <td>
-                            <button onclick="OpenPopup(this)">
+                            <button onclick="OpenPopup(this,2)">
                                 <div class="icon-edit"></div>
                             </button>
-                            <button>
+                            <button onclick="OpenPopup(this,3)">
                                 <div class="icon-copy"></div>
                             </button>
                         </td>
@@ -375,10 +412,10 @@
                         <td class="table__cell-left">894.000</td>
                         <td class="table__cell-left">19.106.000</td>
                         <td>
-                            <button onclick="OpenPopup(this)">
+                            <button onclick="OpenPopup(this,2)">
                                 <div class="icon-edit"></div>
                             </button>
-                            <button>
+                            <button onclick="OpenPopup(this,3)">
                                 <div class="icon-copy"></div>
                             </button>
                         </td>
@@ -395,10 +432,10 @@
                         <td class="table__cell-left">894.000</td>
                         <td class="table__cell-left">19.106.000</td>
                         <td>
-                            <button onclick="OpenPopup(this)">
+                            <button onclick="OpenPopup(this,2)">
                                 <div class="icon-edit"></div>
                             </button>
-                            <button>
+                            <button onclick="OpenPopup(this,3)">
                                 <div class="icon-copy"></div>
                             </button>
                         </td>
@@ -415,10 +452,10 @@
                         <td class="table__cell-left">894.000</td>
                         <td class="table__cell-left">19.106.000</td>
                         <td>
-                            <button onclick="OpenPopup(this)">
+                            <button onclick="OpenPopup(this,2)">
                                 <div class="icon-edit"></div>
                             </button>
-                            <button>
+                            <button onclick="OpenPopup(this,3)">
                                 <div class="icon-copy"></div>
                             </button>
                         </td>
@@ -435,10 +472,10 @@
                         <td class="table__cell-left">894.000</td>
                         <td class="table__cell-left">19.106.000</td>
                         <td>
-                            <button onclick="OpenPopup(this)">
+                            <button onclick="OpenPopup(this,2)">
                                 <div class="icon-edit"></div>
                             </button>
-                            <button>
+                            <button onclick="OpenPopup(this,3)">
                                 <div class="icon-copy"></div>
                             </button>
                         </td>
@@ -455,10 +492,10 @@
                         <td class="table__cell-left">894.000</td>
                         <td class="table__cell-left">19.106.000</td>
                         <td>
-                            <button onclick="OpenPopup(this)">
+                            <button onclick="OpenPopup(this,2)">
                                 <div class="icon-edit"></div>
                             </button>
-                            <button>
+                            <button onclick="OpenPopup(this,3)">
                                 <div class="icon-copy"></div>
                             </button>
                         </td>
@@ -514,7 +551,7 @@
         <div class="popup-form">
             <div class="popup-form__header">
                 <h2>Sửa tài sản</h2>
-                <div class="header__close" style="cursor: pointer;" onclick="ClosePopup(this)">X</div>
+                <div class="header__close" style="cursor: pointer;" onclick="ClosePopup(this)"><div class="icon-close-popup"></div></div>
             </div>
             <div class="popup-form__grid">
                 <div class="grid__item">
@@ -612,37 +649,46 @@
                 </div>
                 <div class="grid__item">
                     <label for="">Ngày mua <span style="color:red">*</span></label>
-                    <input type="date" id="txtNgayMua" class="txt-box" placeholder="Nhập nội dung">
+                    <div class="txt-box--date">
+                        <input type="date" id="txtNgayMua" class="txt-box" placeholder="Nhập nội dung">
+                        <div class="icon-date"></div>
+                    </div>
                     <div class="txt--error" style="color: red;"></div>
                 </div>
                 <div class="grid__item">
                     <label for="">Ngày bắt đầu sử dụng <span style="color:red">*</span></label>
-                    <input type="date" class="txt-box" id="txtNgayBDSD" placeholder="Nhập nội dung">
+                    <div class="txt-box--date">
+                        <input type="date" class="txt-box" id="txtNgayBDSD" placeholder="Nhập nội dung">
+                        <div class="icon-date"></div>
+                    </div>
                     <div class="txt--error" style="color: red;"></div>
                 </div>
             </div>
             <div class="popup-form__footer">
-                <button class="btn btn--primary" id="btnSave" style="width: 100px;">Lưu</button>
-                <button class="btn" style="width: 100px;" id="btnCancel">Huỷ</button>
+                <button class="btn btn--primary" id="btnSave" style="width: 120px;">Lưu</button>
+                <button class="btn" style="width: 120px;" id="btnCancel">Huỷ</button>
             </div>
         </div>
     </div>
 
     <!-- dialog -->
     <div class="dialog" hidden>
-        <div class="dialog__body">
+        <div class="dialog-form">
+        <div class="dialog-form__body">
             <div class="icon-dialog-warning"></div>
             <div class="body__content">Bạn có muốn huỷ khai báo tài sản nàybáo tài sản này?</div>
         </div>
-        <div class="dialog__footer">
-            <button class="btn btn--primary">Huỷ bỏ</button>
-            <button class="btn " id="btnCancel">Không</button>
+        <div class="dialog-form__footer">
+            <button class="btn btn--primary"></button>
+            <button class="btn btn--sub" style="display: none;"></button>
+            <button class="btn btn--outline" style="display:none;"></button>
+        </div>     
         </div>
     </div>
 
     <!-- toast message -->
 
-    <script src="../js/script.js"></script>
+    <script  src="../js/script.js"></script>
 </body>
 
 </html>

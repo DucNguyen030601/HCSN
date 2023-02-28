@@ -46,7 +46,13 @@ tfoot tr{
 
 tbody tr:hover td {
     background-color: rgba(26, 164, 200, .2);
+    cursor: pointer;
 }
+
+.table-row-check{
+    background-color: rgba(26, 164, 200, .2);
+}
+
 
 tbody tr:hover button{
     visibility:visible;
@@ -96,6 +102,7 @@ td button {
     height: 20px;
     text-align: center;
     line-height: 20px;
+    cursor: pointer;
 }
 .table-footer__pagging .pagging__item--active{
     font-weight: bold;

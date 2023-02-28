@@ -3,6 +3,7 @@
     border-radius: 2.5px;
     border: 1px solid #afafaf;
     padding: 11px 12px;
+    outline-color: #22a7ca;
 }
 
 .txt-box::placeholder {
@@ -10,14 +11,13 @@
 }
 
 .txt-box--filter {
-    height: 35px;
-    width: 197px;
     position: relative;
 }
 
 .txt-box--filter .icon-search {
     position: absolute;
-    top: 25%;
+    top: 50%;
+    transform: translateY(-50%);
     left: 10px;
 }
 
@@ -36,8 +36,6 @@
 }
 
 .txt-box--number {
-    height: 35px;
-    width: 197px;
     text-align: right;
     position: relative;
 }
@@ -49,17 +47,19 @@
 
 .txt-box--number .icon-ip-number {
     position: absolute;
-    top: 30%;
-    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 12px;
     z-index: 0;
 }
 
 .txt-box--number input::-webkit-inner-spin-button {
     opacity: 0;
     z-index: 1;
-    margin-left: 15px;
+    margin-left: 10px;
+    margin-right: -5px;
     cursor: pointer;
-    transform: scale(1.5);
+    transform: scale(1.2);
 }
 input[type="checkbox"]{
     color: #090f39;
@@ -67,7 +67,6 @@ input[type="checkbox"]{
     width: 14px;
     cursor: pointer;
     appearance: none;
-   
 }
 input[type="checkbox"]:after{
     background: url('/assets/icon/qlts-icon.png') no-repeat -113px -377px;
@@ -83,4 +82,26 @@ input[type="checkbox"]:checked::after {
     height: 14px;
     content: "";
     display: inline-block;
+}
+
+.txt-box--date{
+
+    position: relative;
+}
+.txt-box--date input{
+    width: 100%;
+    height: 100%;
+}
+.txt-box--date .icon-date{
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    z-index: 0;
+}
+.txt-box--date input::-webkit-calendar-picker-indicator{
+    z-index: 1;
+    opacity: 0;
+    transform: scale(1.2);
+    cursor: pointer;
 }
